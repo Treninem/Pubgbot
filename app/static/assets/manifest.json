@@ -1,0 +1,342 @@
+{
+  "version": "1.3.0",
+  "format": "webp",
+  "files": [
+    {
+      "file": "01_main_banner.webp",
+      "width": 1600,
+      "height": 928,
+      "source": "01_main_banner.png"
+    },
+    {
+      "file": "02_clan_banner.webp",
+      "width": 1600,
+      "height": 700,
+      "source": "02_clan_banner.png"
+    },
+    {
+      "file": "03_tournament_banner.webp",
+      "width": 1600,
+      "height": 700,
+      "source": "03_tournament_banner.png"
+    },
+    {
+      "file": "04_beginner_banner.webp",
+      "width": 1600,
+      "height": 700,
+      "source": "04_beginner_banner.png"
+    },
+    {
+      "file": "05_search_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "05_search_icon.png"
+    },
+    {
+      "file": "06_room_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "06_room_icon.png"
+    },
+    {
+      "file": "07_clan_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "07_clan_icon.png"
+    },
+    {
+      "file": "08_chat_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "08_chat_icon.png"
+    },
+    {
+      "file": "11_find_team_button.webp",
+      "width": 1200,
+      "height": 300,
+      "source": "11_find_team_button.png"
+    },
+    {
+      "file": "12_create_room_button.webp",
+      "width": 1200,
+      "height": 300,
+      "source": "12_create_room_button.png"
+    },
+    {
+      "file": "13_favorites_button.webp",
+      "width": 1200,
+      "height": 300,
+      "source": "13_favorites_button.png"
+    },
+    {
+      "file": "14_support_button.webp",
+      "width": 1200,
+      "height": 300,
+      "source": "14_support_button.png"
+    },
+    {
+      "file": "15_rooms_card.webp",
+      "width": 1600,
+      "height": 700,
+      "source": "15_rooms_card.png"
+    },
+    {
+      "file": "16_clans_card.webp",
+      "width": 1200,
+      "height": 480,
+      "source": "16_clans_card.png"
+    },
+    {
+      "file": "17_ads_card.webp",
+      "width": 1200,
+      "height": 480,
+      "source": "17_ads_card.png"
+    },
+    {
+      "file": "18_profile_card.webp",
+      "width": 1200,
+      "height": 480,
+      "source": "18_profile_card.png"
+    },
+    {
+      "file": "19_assaulter_icon.webp",
+      "width": 640,
+      "height": 537,
+      "source": "19_assaulter_icon.png"
+    },
+    {
+      "file": "20_sniper_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "20_sniper_icon.png"
+    },
+    {
+      "file": "21_support_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "21_support_icon.png"
+    },
+    {
+      "file": "22_mic_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "22_mic_icon.png"
+    },
+    {
+      "file": "23_profile_banner.webp",
+      "width": 1600,
+      "height": 661,
+      "source": "23_profile_banner.png"
+    },
+    {
+      "file": "24_user_ads_banner.webp",
+      "width": 1592,
+      "height": 988,
+      "source": "24_user_ads_banner.png"
+    },
+    {
+      "file": "25_owner_panel_banner.webp",
+      "width": 1600,
+      "height": 887,
+      "source": "25_owner_panel_banner.png"
+    },
+    {
+      "file": "26_rules_banner.webp",
+      "width": 1600,
+      "height": 968,
+      "source": "26_rules_banner.png"
+    },
+    {
+      "file": "27_edit_profile_button.webp",
+      "width": 1600,
+      "height": 681,
+      "source": "27_edit_profile_button.png"
+    },
+    {
+      "file": "28_save_profile_button.webp",
+      "width": 1600,
+      "height": 783,
+      "source": "28_save_profile_button.png"
+    },
+    {
+      "file": "29_copy_id_button.webp",
+      "width": 1200,
+      "height": 300,
+      "source": "29_copy_id_button.png"
+    },
+    {
+      "file": "30_submit_ad_button.webp",
+      "width": 1600,
+      "height": 691,
+      "source": "30_submit_ad_button.png"
+    },
+    {
+      "file": "31_rank_filter_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "31_rank_filter_icon.png"
+    },
+    {
+      "file": "32_server_filter_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "32_server_filter_icon.png"
+    },
+    {
+      "file": "33_language_filter_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "33_language_filter_icon.png"
+    },
+    {
+      "file": "34_no_toxic_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "34_no_toxic_icon.png"
+    },
+    {
+      "file": "35_premium_main_bg.webp",
+      "width": 1600,
+      "height": 900,
+      "source": "35_premium_main_bg.png"
+    },
+    {
+      "file": "36_premium_clan_bg.webp",
+      "width": 1600,
+      "height": 900,
+      "source": "36_premium_clan_bg.png"
+    },
+    {
+      "file": "37_premium_tournament_bg.webp",
+      "width": 1600,
+      "height": 899,
+      "source": "37_premium_tournament_bg.png"
+    },
+    {
+      "file": "38_premium_ads_bg.webp",
+      "width": 1600,
+      "height": 900,
+      "source": "38_premium_ads_bg.png"
+    },
+    {
+      "file": "39_premium_search_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "39_premium_search_icon.png"
+    },
+    {
+      "file": "40_premium_clan_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "40_premium_clan_icon.png"
+    },
+    {
+      "file": "41_premium_trophy_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "41_premium_trophy_icon.png"
+    },
+    {
+      "file": "42_premium_ads_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "42_premium_ads_icon.png"
+    },
+    {
+      "file": "43_premium_find_button.webp",
+      "width": 1200,
+      "height": 400,
+      "source": "43_premium_find_button.png"
+    },
+    {
+      "file": "44_premium_room_button.webp",
+      "width": 1200,
+      "height": 401,
+      "source": "44_premium_room_button.png"
+    },
+    {
+      "file": "45_premium_tournament_button.webp",
+      "width": 1200,
+      "height": 400,
+      "source": "45_premium_tournament_button.png"
+    },
+    {
+      "file": "46_premium_ads_button.webp",
+      "width": 1200,
+      "height": 406,
+      "source": "46_premium_ads_button.png"
+    },
+    {
+      "file": "47_rooms_banner_bg.webp",
+      "width": 1600,
+      "height": 721,
+      "source": "47_rooms_banner_bg.png"
+    },
+    {
+      "file": "48_clans_banner_bg.webp",
+      "width": 1600,
+      "height": 720,
+      "source": "48_clans_banner_bg.png"
+    },
+    {
+      "file": "49_support_banner_bg.webp",
+      "width": 1600,
+      "height": 720,
+      "source": "49_support_banner_bg.png"
+    },
+    {
+      "file": "50_stats_banner_bg.webp",
+      "width": 1568,
+      "height": 1003,
+      "source": "50_stats_banner_bg.png"
+    },
+    {
+      "file": "51_room_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "51_room_icon.png"
+    },
+    {
+      "file": "53_support_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "53_support_icon.png"
+    },
+    {
+      "file": "54_stats_icon.webp",
+      "width": 640,
+      "height": 640,
+      "source": "54_stats_icon.png"
+    },
+    {
+      "file": "55_create_room_button_bg.webp",
+      "width": 1200,
+      "height": 400,
+      "source": "55_create_room_button_bg.png"
+    },
+    {
+      "file": "56_create_clan_button_bg.webp",
+      "width": 1200,
+      "height": 401,
+      "source": "56_create_clan_button_bg.png"
+    },
+    {
+      "file": "57_help_button_bg.webp",
+      "width": 1200,
+      "height": 400,
+      "source": "57_help_button_bg.png"
+    },
+    {
+      "file": "58_refresh_stats_button_bg.webp",
+      "width": 1200,
+      "height": 450,
+      "source": "58_refresh_stats_button_bg.png"
+    },
+    {
+      "file": "52_rooms_list_icon.webp",
+      "width": 512,
+      "height": 512,
+      "source": "preserved from v1.2.0"
+    }
+  ]
+}

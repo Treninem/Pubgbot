@@ -1,0 +1,488 @@
+{
+  "project": "PUBG Mobile Squad Finder",
+  "version": "1.3.0",
+  "algorithm": "SHA-256",
+  "files_count": 96,
+  "files": [
+    {
+      "path": ".dockerignore",
+      "sha256": "729f2cb93c5054177f50482d180442bed3437af2f68addaf992c8b14c3da3571",
+      "bytes": 89
+    },
+    {
+      "path": ".env.example",
+      "sha256": "82d8a600e53cf8b2bc571d70c61ba3aca895e24dabd7be0d948001b85b1d7154",
+      "bytes": 1174
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "25e2aa604163c48cf2c6b48ed84d817d0db8aff75aaf90b8b1f1c3a37f933955",
+      "bytes": 121
+    },
+    {
+      "path": "BOTHOST_DEPLOY_RU.md",
+      "sha256": "0a3f9c0819e8d782d2ed8cb49a027de26b89b46aad16826f2534b870f65f8c2f",
+      "bytes": 5860
+    },
+    {
+      "path": "CHECK_REPORT.json",
+      "sha256": "06cea608fdad8f5db83a87cfae14a2b6e330481d5e084b951f644fa946358279",
+      "bytes": 2849
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "ad930071da18c8e4945378e44d8663d4033ab890dfa214c729c807e708b5f3fa",
+      "bytes": 415
+    },
+    {
+      "path": "FUNCTIONAL_STATUS.json",
+      "sha256": "35d40f552c2e519ee97e2552b87660021db56f65846e6b3043b575b5a6c4288f",
+      "bytes": 1174
+    },
+    {
+      "path": "README.md",
+      "sha256": "5359885370c53a5a8a35d9e0ffc868beb22ac4775354577192b33363792dc29d",
+      "bytes": 6518
+    },
+    {
+      "path": "app/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "app/auth.py",
+      "sha256": "64889dc26f8ac76bcb7a7de203f50db02745f124b8ecc31cc9c2f57c1c7a8186",
+      "bytes": 5403
+    },
+    {
+      "path": "app/backup_service.py",
+      "sha256": "51a46da2dc0ab021f010554178d69673dac69180aa89fcc95567393f4e93a445",
+      "bytes": 5139
+    },
+    {
+      "path": "app/config.py",
+      "sha256": "7631ec9e83dd20e13da621b77d7c5e256e4e349b5d5a99a0543d6c3ee5ed7786",
+      "bytes": 5950
+    },
+    {
+      "path": "app/db.py",
+      "sha256": "77b99260b7a417ee0ef813f0a507fc277771b05853a69e9fb0171b0cf5abca15",
+      "bytes": 5741
+    },
+    {
+      "path": "app/main.py",
+      "sha256": "92e22b96e4bdca393b617635e952f247894735953987a955eb365b3b29fe05a9",
+      "bytes": 5363
+    },
+    {
+      "path": "app/maintenance_service.py",
+      "sha256": "d6ef1adb74fc666822864f5e595bb22f8887c7c1f9cde6f74faa03ed629e3231",
+      "bytes": 1937
+    },
+    {
+      "path": "app/middleware.py",
+      "sha256": "742384f4b5afea6e1fcf2c57d34bf9fb9502d75997229c591ec3af9b88e81735",
+      "bytes": 4336
+    },
+    {
+      "path": "app/models.py",
+      "sha256": "b54c52958f8f725bb0eab7b6a109b99d22a6b3f5ff893fc16291103811feab48",
+      "bytes": 15690
+    },
+    {
+      "path": "app/payment_service.py",
+      "sha256": "e3d188383b3c3defb31c7edddc63c03f09716597cb5f6a072a9c8885cedf9238",
+      "bytes": 4302
+    },
+    {
+      "path": "app/routers/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "app/routers/ads.py",
+      "sha256": "13dc964a02eb5b790760b62feb279d2579875b43833f1ca6edc59a21b4354bfa",
+      "bytes": 8581
+    },
+    {
+      "path": "app/routers/clans.py",
+      "sha256": "00996e81be836f2c9a43874ef5e0ad9383ae03f1e2032cfa63cddafcbe0eb9f6",
+      "bytes": 33973
+    },
+    {
+      "path": "app/routers/common.py",
+      "sha256": "ca4e081beb5265116f86d3b243033e1f48ff3e4dfcb29edcb80f0a67dc1bc025",
+      "bytes": 1963
+    },
+    {
+      "path": "app/routers/owner.py",
+      "sha256": "cb8183e99d39c310b4a3ce05459ef64f4e03922459ff2daf6e967391dc734a85",
+      "bytes": 37764
+    },
+    {
+      "path": "app/routers/profiles.py",
+      "sha256": "7b63f0d0fe54d117e2bbb864cf57e9c2fc21bb1efc6b5ba101fbf63e2b96c8e8",
+      "bytes": 2375
+    },
+    {
+      "path": "app/routers/rooms.py",
+      "sha256": "dedfd057cf19ff0aed6860f0d3f0ca16571a5ae90327af3ab4bac3f088d6cd9c",
+      "bytes": 3720
+    },
+    {
+      "path": "app/routers/social.py",
+      "sha256": "cb16afd52c8fed327cfd8db4087bacc1bcb1cda34402c715b073b4f17a68654e",
+      "bytes": 3102
+    },
+    {
+      "path": "app/runtime.py",
+      "sha256": "f901c804ca20c0969cad4fa4fa9cdd09e914fb6f7bbdfadf8acf3aab94208a14",
+      "bytes": 1163
+    },
+    {
+      "path": "app/schemas.py",
+      "sha256": "2469d056677f58cefe4f5d7125c438b94131ee1ddfa8db55c58b04a29dd192ab",
+      "bytes": 7807
+    },
+    {
+      "path": "app/static/app.js",
+      "sha256": "4f692039229a560ba2c9e48bb55fa5cd577a6c410bfe089287837d14bac94836",
+      "bytes": 53755
+    },
+    {
+      "path": "app/static/assets/01_main_banner.webp",
+      "sha256": "7c440e3b55e0f5d9a6510ae71a90c96fd3a8030d2f70b1637ce56bdfc112ccb0",
+      "bytes": 192306
+    },
+    {
+      "path": "app/static/assets/02_clan_banner.webp",
+      "sha256": "76e0a074cd03db473b4d471a3a71715f969efe139d919272b1d76d1fbbd69c9b",
+      "bytes": 160876
+    },
+    {
+      "path": "app/static/assets/03_tournament_banner.webp",
+      "sha256": "368be97c39eed8ee9238289d063ce70675086dd15daaa6d0729935687a8fd89d",
+      "bytes": 197766
+    },
+    {
+      "path": "app/static/assets/04_beginner_banner.webp",
+      "sha256": "c1707806e90b296747708036c1b4cb514cc767627aeb0578a127ad63e143546a",
+      "bytes": 157018
+    },
+    {
+      "path": "app/static/assets/05_search_icon.webp",
+      "sha256": "406bbb8540442302695173a08c4b4ec76788a4e137674f4c958dfe5df29238e4",
+      "bytes": 70442
+    },
+    {
+      "path": "app/static/assets/06_room_icon.webp",
+      "sha256": "79be3b834fb466e099a15a08eb5e51b82284330522a6b39e92bebf60af32f313",
+      "bytes": 78328
+    },
+    {
+      "path": "app/static/assets/07_clan_icon.webp",
+      "sha256": "f4d895ba97fe097ca608e326339e40732038fc4e36399fa8ff1b891fe51283c9",
+      "bytes": 95760
+    },
+    {
+      "path": "app/static/assets/08_chat_icon.webp",
+      "sha256": "7864d6e593ae21463cc58db42b0e999e0d4899313ca4cb65c21da5d59cc72a11",
+      "bytes": 97140
+    },
+    {
+      "path": "app/static/assets/11_find_team_button.webp",
+      "sha256": "81b8f9e24cbec1cd95e707b3ec8f7eca25b054655864d50168f6f10fcf5d361d",
+      "bytes": 34494
+    },
+    {
+      "path": "app/static/assets/12_create_room_button.webp",
+      "sha256": "b91d86b47ac8f9a44148a032bb749c57cf4a280cfb5d53408a9c9f7cbb3a92cb",
+      "bytes": 25364
+    },
+    {
+      "path": "app/static/assets/13_favorites_button.webp",
+      "sha256": "0c947557249f585f7181ce1aaff687fcf95667f7c822f6c207240438ef9eda71",
+      "bytes": 24994
+    },
+    {
+      "path": "app/static/assets/14_support_button.webp",
+      "sha256": "cffc4576329e598a89dced69dbbab81a28a44bfe870481c8b83f0c175110eda8",
+      "bytes": 18366
+    },
+    {
+      "path": "app/static/assets/15_rooms_card.webp",
+      "sha256": "1bca03b9847ddd85b763cd535e699aa7afadad53b158e96a25284c5c867e774a",
+      "bytes": 113794
+    },
+    {
+      "path": "app/static/assets/16_clans_card.webp",
+      "sha256": "560b5b249db4976de75fa78d40a4cc14c57045ca587420dbc919d0fe6f43dac5",
+      "bytes": 78146
+    },
+    {
+      "path": "app/static/assets/17_ads_card.webp",
+      "sha256": "f09f05e0d030907f0e493c481bafe6911dd451a07aa79a8ef854b1dfc64194b5",
+      "bytes": 76910
+    },
+    {
+      "path": "app/static/assets/18_profile_card.webp",
+      "sha256": "63c0952c6a0b7ea4a5c54dee8ed1d1f1d347759d5b9ca25846a2ebf20afa4857",
+      "bytes": 93660
+    },
+    {
+      "path": "app/static/assets/19_assaulter_icon.webp",
+      "sha256": "ec5d274558a1d6fd66d39d2d7a3a94dcef0bd7da7be3e7379a068d162f47c982",
+      "bytes": 31516
+    },
+    {
+      "path": "app/static/assets/20_sniper_icon.webp",
+      "sha256": "80996a941a50ae179e9c8b46ed613ab8093e3e10735c74d310a2575f46e26c70",
+      "bytes": 30254
+    },
+    {
+      "path": "app/static/assets/21_support_icon.webp",
+      "sha256": "57870c9e50db45e6a7563eb4fb11698151fa6f817e7f8587e57e6aeef52cc095",
+      "bytes": 47458
+    },
+    {
+      "path": "app/static/assets/22_mic_icon.webp",
+      "sha256": "6af481831fbd89962cee7557a5ae87c609bfba2d2ddefc90dd99971d43c7ce39",
+      "bytes": 61942
+    },
+    {
+      "path": "app/static/assets/23_profile_banner.webp",
+      "sha256": "040809b19badffc8aabf71ad77bca375fb93648c8d619153759852e530e17314",
+      "bytes": 103792
+    },
+    {
+      "path": "app/static/assets/24_user_ads_banner.webp",
+      "sha256": "ba1a327a89296d9c44f38cb53062d5e4a38fcea6f40dfe64a6b052ede73ff354",
+      "bytes": 93384
+    },
+    {
+      "path": "app/static/assets/25_owner_panel_banner.webp",
+      "sha256": "f0cc8a7592da7e016c159196779f34799f2341c1edbec60460d8f0f4442ccaf6",
+      "bytes": 118772
+    },
+    {
+      "path": "app/static/assets/26_rules_banner.webp",
+      "sha256": "5b9559f11f9c83f0a2d42adfca4215a58937b504bb0b0d06e5b9de1fc3c90b80",
+      "bytes": 123938
+    },
+    {
+      "path": "app/static/assets/27_edit_profile_button.webp",
+      "sha256": "85d9a0d161259eb4aa3aebcd3fd909594b479b1e19a77d2f3a218d3e0547f739",
+      "bytes": 51482
+    },
+    {
+      "path": "app/static/assets/28_save_profile_button.webp",
+      "sha256": "2736f1239fca31eff3fa8f4475d50eb7775bc907a95d1b31ca7f0de39492bc1a",
+      "bytes": 35050
+    },
+    {
+      "path": "app/static/assets/29_copy_id_button.webp",
+      "sha256": "342ab11a0e7829c5c5ac78f7f5f493fe7b8502c45dfc099ee2c88cdbab841fef",
+      "bytes": 20360
+    },
+    {
+      "path": "app/static/assets/30_submit_ad_button.webp",
+      "sha256": "cc2b0f98285b0d5a5d849e3ce8c07e0260355ba3d02dde7d649bdcc97923b07b",
+      "bytes": 32156
+    },
+    {
+      "path": "app/static/assets/31_rank_filter_icon.webp",
+      "sha256": "4ebeee0cd602b730e6a0881f1e12d68d751c14924cfd7d17e79cd88b83ca9aab",
+      "bytes": 29414
+    },
+    {
+      "path": "app/static/assets/32_server_filter_icon.webp",
+      "sha256": "e5a59b5b4a662d74c28d853876ac34de8e4a3938e489c7c6067c87b61412c973",
+      "bytes": 35794
+    },
+    {
+      "path": "app/static/assets/33_language_filter_icon.webp",
+      "sha256": "3f01f198e483c564b811526a5b38977faa204836c8f3a21a499ded65836632af",
+      "bytes": 72192
+    },
+    {
+      "path": "app/static/assets/34_no_toxic_icon.webp",
+      "sha256": "596c5db96ba2ac0c4d44219a9d45d019704a92752a7e9b454767f79777736fc6",
+      "bytes": 38546
+    },
+    {
+      "path": "app/static/assets/35_premium_main_bg.webp",
+      "sha256": "207f845fb9fd99b4ac3e472c04f4d9cde6cbbf3ccb651127fab114cc48a1fe41",
+      "bytes": 91902
+    },
+    {
+      "path": "app/static/assets/36_premium_clan_bg.webp",
+      "sha256": "a40062fc4b6e4161b82f52876dcfef1db1a8ee573f97e7f8e25f5b9d6c2e66b1",
+      "bytes": 125584
+    },
+    {
+      "path": "app/static/assets/37_premium_tournament_bg.webp",
+      "sha256": "4f4da676421836af54247dc68d02300eda31ad7d9e1a414cee88ce3ee06d1db7",
+      "bytes": 115150
+    },
+    {
+      "path": "app/static/assets/38_premium_ads_bg.webp",
+      "sha256": "c9a9aba734a8e25c30ec7f3d71c0c746ee8ae71d652feebf03b12ea0cdcf1be3",
+      "bytes": 70820
+    },
+    {
+      "path": "app/static/assets/39_premium_search_icon.webp",
+      "sha256": "38da8457a6a33c89b162f1e4a4fedd0ec6ef4404051b850314e49464ec531d93",
+      "bytes": 96336
+    },
+    {
+      "path": "app/static/assets/40_premium_clan_icon.webp",
+      "sha256": "ea901567aa747e5c8e2568de43e7f1d58e5627c6b977b39a40c0860bc5fe62fe",
+      "bytes": 106008
+    },
+    {
+      "path": "app/static/assets/41_premium_trophy_icon.webp",
+      "sha256": "0fa01430a3186493290f901367ec7250d9bf62f781c6ffc8a5184cbc967b8194",
+      "bytes": 73528
+    },
+    {
+      "path": "app/static/assets/42_premium_ads_icon.webp",
+      "sha256": "daf2bee6d5605789d490642f4b2ea7e1c13145f4aadbff0597639a2860a93cc7",
+      "bytes": 105026
+    },
+    {
+      "path": "app/static/assets/43_premium_find_button.webp",
+      "sha256": "3a270e99eacbd035275f134a528eff6a3d80dfb948271f20980312f6fafaf954",
+      "bytes": 70790
+    },
+    {
+      "path": "app/static/assets/44_premium_room_button.webp",
+      "sha256": "95e31574b6d8b94c752e942df3ab62a8420384b1386bdf6bbd48c5a37c1cf83d",
+      "bytes": 52978
+    },
+    {
+      "path": "app/static/assets/45_premium_tournament_button.webp",
+      "sha256": "9678aaf886c7d8ed6393f3dedc1e44a1766f124ad786839c3e2688ff82dbe187",
+      "bytes": 73408
+    },
+    {
+      "path": "app/static/assets/46_premium_ads_button.webp",
+      "sha256": "8750aa3de0c254772c88f95d98e920b7b4a788001f3e4a6bcfbf4be91ea71e37",
+      "bytes": 49990
+    },
+    {
+      "path": "app/static/assets/47_rooms_banner_bg.webp",
+      "sha256": "622348ac6d439efe8058c9ee851829d2d01fe51e7647aefb8745eaabb8c7ad6e",
+      "bytes": 100504
+    },
+    {
+      "path": "app/static/assets/48_clans_banner_bg.webp",
+      "sha256": "f8ad60ea7901cda175b0856af2b97c170a7ba9b45e4fbe0c956e4a9ebb795f6f",
+      "bytes": 108528
+    },
+    {
+      "path": "app/static/assets/49_support_banner_bg.webp",
+      "sha256": "54a3ea1c7f8d95350202755071b89eaaf3c7886c800ac67e8a8d697dc5b0e066",
+      "bytes": 98492
+    },
+    {
+      "path": "app/static/assets/50_stats_banner_bg.webp",
+      "sha256": "e77aa7b850c6a2524eb191de666d5ae1173332d1cd180a909b5a508c4a54255d",
+      "bytes": 157264
+    },
+    {
+      "path": "app/static/assets/51_room_icon.webp",
+      "sha256": "094b4c7f1aa97b59a79be6d8280f7b159d15418bfa58a3117225e9b2064c4f3e",
+      "bytes": 98480
+    },
+    {
+      "path": "app/static/assets/52_rooms_list_icon.webp",
+      "sha256": "a1595d4dbba3950a4eff89b964fe1212895dea158659b0cf89c5f6a2e6894b9c",
+      "bytes": 43622
+    },
+    {
+      "path": "app/static/assets/53_support_icon.webp",
+      "sha256": "6257fcc09a3a5d8a82f083a23cbac205a211906417c076c32c7ccff5eee80145",
+      "bytes": 112174
+    },
+    {
+      "path": "app/static/assets/54_stats_icon.webp",
+      "sha256": "182b9228acd0dcbeb4cbb6c714cbace8eeceed3a8b4d4081eded2b48df0060ff",
+      "bytes": 73962
+    },
+    {
+      "path": "app/static/assets/55_create_room_button_bg.webp",
+      "sha256": "caf3bacf3da6bea4d321e00b719c3c5688afe9f48e3cf616fa9f7bf77f31bd71",
+      "bytes": 58712
+    },
+    {
+      "path": "app/static/assets/56_create_clan_button_bg.webp",
+      "sha256": "cbf36453bb734dac08f37cf699423d68c273e63bc0e610d0b09cd7d02c144b83",
+      "bytes": 84824
+    },
+    {
+      "path": "app/static/assets/57_help_button_bg.webp",
+      "sha256": "8149e2bd3f53bca05aae43edcedee1da95a84aa616810ae1729ea36bcfcfee7a",
+      "bytes": 75052
+    },
+    {
+      "path": "app/static/assets/58_refresh_stats_button_bg.webp",
+      "sha256": "c6ed13f7c205bb4388269443872e5aad3b6032b0b7dadc9080c0f54b734940d7",
+      "bytes": 64496
+    },
+    {
+      "path": "app/static/assets/manifest.json",
+      "sha256": "8d75843ff298aa8e7a631a93480251c394e13c2d9af4321f11bcfb24fd2f4e6f",
+      "bytes": 7711
+    },
+    {
+      "path": "app/static/index.html",
+      "sha256": "c76bf0ac0a80fe9dfdeb7ccbf44b92fdef54ba503d5a3eb0319e717bb96d17e4",
+      "bytes": 28775
+    },
+    {
+      "path": "app/static/styles.css",
+      "sha256": "6802629d76959d444b46d8921701c9f8320d7dab3b735acd0558d61fd3168139",
+      "bytes": 19192
+    },
+    {
+      "path": "app/telegram_service.py",
+      "sha256": "dd33deac9a309257c317f6c77e4534f9bf16f17af22a08c96199c3269735a8b8",
+      "bytes": 4724
+    },
+    {
+      "path": "bot.py",
+      "sha256": "40d30a5ca4870ca505bae765d5c0c80bed3e1b162074abf4cee2e3fd73396b83",
+      "bytes": 3087
+    },
+    {
+      "path": "main.py",
+      "sha256": "5a42e1bfab123e150c1c4212ba2137abf8017be916da73becf857f5af8915a6e",
+      "bytes": 678
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "8875ab2e82e7c89b63f3a47a652afa7bf911ea5ef13d7b8fdf6c0840ec3cc54d",
+      "bytes": 169
+    },
+    {
+      "path": "run.py",
+      "sha256": "99956ffc795b4e7ad1187ed90cc10171672c194e3b797536230e7835ea084d7e",
+      "bytes": 170
+    },
+    {
+      "path": "scripts/backup_db.py",
+      "sha256": "c6f23a9616081ce7ba0ac7897f6c0edb2072d9e6d5fe7ff965587072d4cf315b",
+      "bytes": 326
+    },
+    {
+      "path": "scripts/preflight.py",
+      "sha256": "4d127e96c3fd558380c1979363176e949b2e7efded24a21a373c9e1faa4471aa",
+      "bytes": 1102
+    },
+    {
+      "path": "scripts/restore_sqlite.py",
+      "sha256": "b63cf49c6131f13133f5b3b4d1404369d2b0ee7d8dde6c4eaad945c475c2968a",
+      "bytes": 1273
+    }
+  ]
+}

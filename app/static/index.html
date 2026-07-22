@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Squad Finder</title>
+  <link rel="stylesheet" href="/static/styles.css?v=130">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand" aria-label="PUBG Mobile Squad Finder"><span class="brand-mark">SF</span><div><b>SQUAD FINDER</b><small>PUBG MOBILE</small></div></div>
+  <button id="backBtn" class="topbar-back" type="button">← Назад</button>
+</header>
+<nav class="tabs" aria-label="Основные разделы">
+  <button data-view="home" class="active">Главная</button>
+  <button data-view="profiles">Подбор</button>
+  <button data-view="rooms">Комнаты</button>
+  <button data-view="clans">Кланы</button>
+  <button data-view="invitations">Приглашения</button>
+  <button data-view="profile">Профиль</button>
+  <button data-view="ads">Реклама</button>
+  <button data-view="owner" id="ownerTab" hidden>Владелец</button>
+</nav>
+<main>
+<section id="view-home" class="view active">
+  <div class="promo-scroller" aria-label="Возможности Squad Finder">
+    <button class="promo-slide" data-go="profiles" type="button" aria-label="Найти тиммейтов"><img src="/static/assets/01_main_banner.webp" width="1600" height="928" alt="Найди свой отряд" fetchpriority="high" decoding="async"></button>
+    <button class="promo-slide" data-go="clans" type="button" aria-label="Найти клан"><img src="/static/assets/02_clan_banner.webp" width="1600" height="700" alt="Набор в клан" decoding="async"></button>
+    <button class="promo-slide" data-go="rooms" type="button" aria-label="Турниры и игровые комнаты"><img src="/static/assets/03_tournament_banner.webp" width="1600" height="700" alt="Турниры" loading="lazy" decoding="async"></button>
+    <button class="promo-slide" data-go="profiles" type="button" aria-label="Помощь новичкам"><img src="/static/assets/04_beginner_banner.webp" width="1600" height="700" alt="Помощь новичкам" loading="lazy" decoding="async"></button>
+  </div>
+
+  <div class="quick-actions" aria-label="Быстрые действия">
+    <button class="image-action" data-go="profiles" type="button"><img src="/static/assets/43_premium_find_button.webp" width="1200" height="400" alt=""><span>Найти тиммейтов</span></button>
+    <button class="image-action" data-go="rooms" type="button"><img src="/static/assets/44_premium_room_button.webp" width="1200" height="401" alt=""><span>Создать комнату</span></button>
+    <button class="image-action" data-go="clans" type="button"><img src="/static/assets/45_premium_tournament_button.webp" width="1200" height="400" alt=""><span>Кланы и турниры</span></button>
+    <button class="image-action purple" data-go="ads" type="button"><img src="/static/assets/46_premium_ads_button.webp" width="1200" height="406" alt=""><span>Реклама для игроков</span></button>
+  </div>
+
+  <div class="metrics home-metrics">
+    <article><img src="/static/assets/39_premium_search_icon.webp" width="72" height="72" alt=""><div><span>Игроки</span><b id="sUsers">—</b></div></article>
+    <article><img src="/static/assets/41_premium_trophy_icon.webp" width="72" height="72" alt=""><div><span>Анкеты</span><b id="sProfiles">—</b></div></article>
+    <article><img src="/static/assets/51_room_icon.webp" width="72" height="72" alt=""><div><span>Комнаты</span><b id="sRooms">—</b></div></article>
+    <article><img src="/static/assets/40_premium_clan_icon.webp" width="72" height="72" alt=""><div><span>Кланы</span><b id="sClans">—</b></div></article>
+  </div>
+
+  <div class="feature-grid" aria-label="Разделы приложения">
+    <button class="feature-image" data-go="rooms" type="button"><img src="/static/assets/15_rooms_card.webp" width="1600" height="700" alt="Живые комнаты" loading="lazy"></button>
+    <button class="feature-image" data-go="clans" type="button"><img src="/static/assets/16_clans_card.webp" width="1600" height="640" alt="Кланы и сообщества" loading="lazy"></button>
+    <button class="feature-image" data-go="ads" type="button"><img src="/static/assets/17_ads_card.webp" width="1600" height="640" alt="Реклама для игр" loading="lazy"></button>
+    <button class="feature-image" data-go="profile" type="button"><img src="/static/assets/18_profile_card.webp" width="1600" height="640" alt="Профиль и PUBG ID" loading="lazy"></button>
+  </div>
+
+  <section class="role-showcase" aria-label="Игровые роли">
+    <h2>Соберите сбалансированный состав</h2>
+    <div class="role-grid">
+      <article><img src="/static/assets/19_assaulter_icon.webp" width="160" height="134" alt=""><b>Штурмовик</b></article>
+      <article><img src="/static/assets/20_sniper_icon.webp" width="160" height="160" alt=""><b>Снайпер</b></article>
+      <article><img src="/static/assets/21_support_icon.webp" width="160" height="160" alt=""><b>Поддержка</b></article>
+      <article><img src="/static/assets/22_mic_icon.webp" width="160" height="160" alt=""><b>Связь</b></article>
+    </div>
+  </section>
+
+  <button class="wide-art-card" type="button" data-go="profile"><img src="/static/assets/26_rules_banner.webp" width="1600" height="968" alt="Правила и безопасность" loading="lazy"></button>
+</section>
+
+<section id="view-profiles" class="view">
+  <div class="page-art"><img src="/static/assets/23_profile_banner.webp" width="1600" height="661" alt="Профиль игрока" loading="lazy"></div>
+  <div class="section-title"><div><h2>Подбор тимейтов</h2><p class="muted">Фильтруйте игроков по серверу, роли, рангу и наличию микрофона.</p></div><img class="title-icon" src="/static/assets/39_premium_search_icon.webp" width="72" height="72" alt=""></div>
+  <div class="filter-icons" aria-hidden="true"><span><img src="/static/assets/31_rank_filter_icon.webp" alt="">Ранг</span><span><img src="/static/assets/32_server_filter_icon.webp" alt="">Сервер</span><span><img src="/static/assets/33_language_filter_icon.webp" alt="">Язык</span><span><img src="/static/assets/34_no_toxic_icon.webp" alt="">Без токсиков</span></div>
+  <div class="filters">
+    <select id="fServer"><option value="">Все серверы</option><option>Европа</option><option>Азия</option><option>Ближний Восток</option><option>Северная Америка</option></select>
+    <select id="fRole"><option value="">Все роли</option><option>Штурмовик</option><option>Снайпер</option><option>Поддержка</option><option>Разведчик</option><option>Универсал</option></select>
+    <input id="fRank" placeholder="Ранг">
+    <label><input id="fMic" type="checkbox"> Только с микрофоном</label>
+    <button id="searchProfiles">Найти</button>
+  </div>
+  <div id="profilesList" class="list"></div>
+</section>
+
+<section id="view-rooms" class="view">
+  <div class="template-banner copy-right"><img src="/static/assets/47_rooms_banner_bg.webp" width="1600" height="721" alt=""><div><small>ИГРАЙТЕ СЕЙЧАС</small><h2>Живые комнаты</h2><p>Создавайте лобби и собирайте состав без долгого ожидания.</p></div></div>
+  <button id="showRoomForm" class="strip-art-button blue" type="button"><img src="/static/assets/55_create_room_button_bg.webp" width="1200" height="400" alt=""><span>Создать комнату</span></button>
+  <form id="roomForm" class="panel hidden">
+    <input name="title" placeholder="Название" required>
+    <select name="server"><option>Европа</option><option>Азия</option><option>Ближний Восток</option><option>Северная Америка</option></select>
+    <select name="mode"><option>Классика</option><option>Арена</option><option>Метро Рояль</option><option>Турнир</option></select>
+    <input name="map_name" placeholder="Карта">
+    <input name="rank" placeholder="Ранг">
+    <input name="slots_total" type="number" min="2" max="4" value="4">
+    <label><input name="mic_required" type="checkbox"> Микрофон обязателен</label>
+    <input name="starts_at" placeholder="Время начала">
+    <textarea name="note" placeholder="Комментарий"></textarea>
+    <button type="submit">Опубликовать</button>
+  </form>
+  <div id="roomsList" class="list"></div>
+</section>
+
+<section id="view-clans" class="view">
+  <div class="template-banner copy-left"><img src="/static/assets/48_clans_banner_bg.webp" width="1600" height="720" alt=""><div><small>СООБЩЕСТВА PUBG MOBILE</small><h2>Кланы</h2><p>Найдите постоянный состав или создайте собственное сообщество.</p></div></div>
+  <div class="section-head">
+    <div><h2>Кланы</h2><p class="muted">Поиск состава, заявки, приглашения и управление ролями.</p></div>
+    <button id="showClanForm" class="strip-art-button gold compact-strip" type="button"><img src="/static/assets/56_create_clan_button_bg.webp" width="1200" height="401" alt=""><span>Создать клан</span></button>
+  </div>
+
+  <form id="clanForm" class="panel hidden">
+    <h3>Новый клан</h3>
+    <div class="form-grid">
+      <input name="name" placeholder="Название клана" required>
+      <input name="tag" placeholder="Тег, например WOLF" minlength="2" maxlength="12" required>
+      <select name="server"><option>Европа</option><option>Азия</option><option>Ближний Восток</option><option>Северная Америка</option><option>Южная Америка</option><option>KRJP</option></select>
+      <input name="language" value="Русский" placeholder="Язык">
+      <input name="modes" value="Классика" placeholder="Режимы через запятую">
+      <input name="maps" placeholder="Карты через запятую">
+      <input name="min_rank" placeholder="Минимальный ранг">
+      <input name="max_members" type="number" min="2" max="100" value="30" placeholder="Лимит состава">
+      <select name="join_policy"><option value="approval">По заявке</option><option value="open">Открытое вступление</option><option value="invite_only">Только приглашения</option></select>
+      <input name="contact" placeholder="Контакт @username">
+    </div>
+    <label><input name="mic_required" type="checkbox"> Микрофон обязателен</label>
+    <label><input name="recruitment_open" type="checkbox" checked> Набор открыт</label>
+    <textarea name="requirements" placeholder="Требования к игрокам"></textarea>
+    <textarea name="description" placeholder="Описание клана"></textarea>
+    <input name="logo_url" placeholder="Ссылка на логотип, необязательно">
+    <div class="actions"><button type="submit">Создать клан</button><button id="cancelClanForm" type="button">Отмена</button></div>
+  </form>
+
+  <div id="myClanBlock" class="hidden">
+    <h3>Мой клан</h3>
+    <div id="myClanCard" class="list"></div>
+  </div>
+
+  <form id="clanFilters" class="filters clan-filters">
+    <input id="cfQuery" placeholder="Название или тег">
+    <select id="cfServer"><option value="">Все серверы</option><option>Европа</option><option>Азия</option><option>Ближний Восток</option><option>Северная Америка</option><option>Южная Америка</option><option>KRJP</option></select>
+    <input id="cfLanguage" placeholder="Язык">
+    <select id="cfMode"><option value="">Все режимы</option><option>Классика</option><option>Арена</option><option>Турнир</option><option>Метро</option></select>
+    <input id="cfMap" placeholder="Карта">
+    <input id="cfRank" placeholder="Минимальный ранг">
+    <select id="cfPolicy"><option value="">Любой тип вступления</option><option value="open">Открытое</option><option value="approval">По заявке</option><option value="invite_only">По приглашению</option></select>
+    <label><input id="cfMic" type="checkbox"> Нужен микрофон</label>
+    <label><input id="cfRecruitment" type="checkbox"> Только открытый набор</label>
+    <div class="actions"><button type="submit">Найти кланы</button><button id="resetClanFilters" type="button">Сбросить</button></div>
+  </form>
+  <div id="clansList" class="list clan-list"></div>
+</section>
+
+<section id="view-invitations" class="view">
+  <div class="template-banner copy-right"><img src="/static/assets/49_support_banner_bg.webp" width="1600" height="720" alt=""><div><small>КОМАНДНАЯ СВЯЗЬ</small><h2>Приглашения</h2><p>Управляйте приглашениями в комнаты и кланы в одном месте.</p></div></div>
+  <h2>Приглашения</h2>
+  <h3>В кланы</h3><div id="clanInvitationsList" class="list"></div>
+  <h3>Игровые</h3><div id="invitationsList" class="list"></div>
+</section>
+
+<section id="view-profile" class="view">
+  <div class="page-art"><img src="/static/assets/23_profile_banner.webp" width="1600" height="661" alt="Профиль игрока" loading="lazy"></div>
+  <h2>Моя анкета</h2>
+  <form id="profileForm" class="panel">
+    <input name="nickname" placeholder="Игровой ник" required>
+    <input name="pubg_id" placeholder="PUBG ID" required>
+    <select name="server"><option>Европа</option><option>Азия</option><option>Ближний Восток</option><option>Северная Америка</option></select>
+    <input name="language" value="Русский" placeholder="Язык">
+    <input name="rank" placeholder="Ранг">
+    <select name="role"><option>Универсал</option><option>Штурмовик</option><option>Снайпер</option><option>Поддержка</option><option>Разведчик</option></select>
+    <input name="modes" value="Классика" placeholder="Режимы">
+    <input name="maps" placeholder="Любимые карты">
+    <input name="play_time" placeholder="Время игры">
+    <input name="timezone" value="UTC" placeholder="Часовой пояс">
+    <label><input name="has_mic" type="checkbox"> Есть микрофон</label>
+    <input name="play_style" placeholder="Стиль игры">
+    <input name="goal" value="Тимейты" placeholder="Цель поиска">
+    <textarea name="about" placeholder="О себе"></textarea>
+    <label><input name="is_visible" type="checkbox" checked> Анкета видна</label>
+    <label><input name="looking_for_team" type="checkbox" checked> Ищу команду</label>
+    <button type="submit" class="full-image-button"><img src="/static/assets/28_save_profile_button.webp" width="1200" height="587" alt="Сохранить анкету"></button>
+  </form>
+</section>
+
+<section id="view-ads" class="view">
+  <div class="page-art"><img src="/static/assets/24_user_ads_banner.webp" width="1592" height="988" alt="Реклама для игроков" loading="lazy"></div>
+  <div class="section-title"><div><h2>Реклама по PUBG Mobile</h2><p class="muted">Размещение через Telegram Stars с проверкой владельцем.</p></div><img class="title-icon" src="/static/assets/42_premium_ads_icon.webp" width="72" height="72" alt=""></div>
+  <p class="muted">Выберите тариф, создайте объявление и оплатите его через официальный счёт Telegram Stars. После подтверждения оплаты заявка автоматически отправится владельцу на модерацию.</p>
+  <div id="adTariffCards" class="tariff-grid"></div>
+  <form id="adForm" class="panel">
+    <select name="tariff_id" id="adTariff" required><option value="">Загрузка тарифов…</option></select>
+    <select name="category"><option>Набор в клан</option><option>Постоянный состав</option><option>Игровая группа</option><option>Турнир</option><option>Скрим</option><option>Тренировка</option><option>Помощь новичкам</option><option>Игровой канал</option></select>
+    <input name="title" placeholder="Заголовок" required>
+    <textarea name="text" placeholder="Описание" required></textarea>
+    <input name="url" placeholder="https://t.me/..." required>
+    <button type="submit" class="full-image-button"><img src="/static/assets/30_submit_ad_button.webp" width="1200" height="518" alt="Отправить объявление"></button>
+  </form>
+  <h3>Мои рекламные заявки</h3>
+  <div id="myAdsList" class="list"></div>
+  <h3>Активная реклама</h3>
+  <div id="adsList" class="list"></div>
+</section>
+
+<section id="view-owner" class="view" hidden>
+  <div class="page-art owner-art"><img src="/static/assets/25_owner_panel_banner.webp" width="1600" height="887" alt="Панель владельца" loading="lazy"></div>
+  <div class="section-head">
+    <div><h2>Панель владельца</h2><p class="muted">Управление пользователями, контентом, доступом и рассылками.</p></div>
+    <button id="ownerRefresh" class="strip-art-button purple compact-strip" type="button"><img src="/static/assets/58_refresh_stats_button_bg.webp" width="1200" height="450" alt=""><span>Обновить</span></button>
+  </div>
+  <nav class="owner-tabs" aria-label="Разделы панели владельца">
+    <button type="button" data-owner-section="overview" class="active">Обзор</button>
+    <button type="button" data-owner-section="users">Пользователи</button>
+    <button type="button" data-owner-section="rooms">Комнаты</button>
+    <button type="button" data-owner-section="clans">Кланы</button>
+    <button type="button" data-owner-section="ads">Реклама</button>
+    <button type="button" data-owner-section="reports">Жалобы</button>
+    <button type="button" data-owner-section="broadcasts">Рассылки</button>
+    <button type="button" data-owner-section="audit">Журнал</button>
+    <button type="button" data-owner-section="system">Система</button>
+  </nav>
+
+  <section id="owner-overview" class="owner-panel active">
+    <div id="ownerMetrics" class="metrics owner-metrics"></div>
+    <div class="section-head compact-head"><h3>Статистика</h3><div class="actions inline-actions"><select id="ownerStatsDays"><option value="7">7 дней</option><option value="30" selected>30 дней</option><option value="90">90 дней</option></select><button id="ownerStatsRefresh" type="button">Показать</button></div></div>
+    <div id="ownerStatusSummary" class="summary-grid"></div>
+    <div class="table-wrap"><table class="admin-table"><thead><tr><th>Дата</th><th>Игроки</th><th>Комнаты</th><th>Кланы</th><th>Реклама</th><th>Жалобы</th></tr></thead><tbody id="ownerTimeline"></tbody></table></div>
+    <h3>Лучшие кланы</h3><div id="ownerTopClans" class="list"></div>
+  </section>
+
+  <section id="owner-users-panel" class="owner-panel">
+    <form id="ownerUserFilters" class="filters admin-filters">
+      <input id="ownerUserQuery" placeholder="ID, Telegram ID, ник или @username">
+      <select id="ownerUserRole"><option value="">Все роли</option><option value="user">Игрок</option><option value="moderator">Модератор</option><option value="admin">Администратор</option><option value="owner">Владелец</option></select>
+      <select id="ownerUserStatus"><option value="">Любой статус</option><option value="active">Активные</option><option value="online">Онлайн сейчас</option><option value="banned">Заблокированные</option><option value="muted">С мутом</option><option value="ads_blocked">Без рекламы</option></select>
+      <div class="actions"><button type="submit">Найти</button><button id="ownerUserReset" type="button">Сбросить</button></div>
+    </form>
+    <div id="ownerUsersMeta" class="muted"></div><div id="ownerUsers" class="list"></div>
+  </section>
+
+  <section id="owner-rooms-panel" class="owner-panel">
+    <form id="ownerRoomFilters" class="filters admin-filters">
+      <input id="ownerRoomQuery" placeholder="ID комнаты, название или владелец">
+      <select id="ownerRoomStatus"><option value="">Все статусы</option><option value="open">Открытые</option><option value="full">Заполненные</option><option value="closed">Закрытые</option><option value="blocked">Заблокированные</option></select>
+      <button type="submit">Найти</button>
+    </form>
+    <div id="ownerRooms" class="list"></div>
+  </section>
+
+  <section id="owner-clans-panel" class="owner-panel">
+    <form id="ownerClanFilters" class="filters admin-filters">
+      <input id="ownerClanQuery" placeholder="ID, название или тег">
+      <select id="ownerClanStatus"><option value="">Все статусы</option><option value="active">Активные</option><option value="blocked">Заблокированные</option><option value="closed">Закрытые</option></select>
+      <button type="submit">Найти</button>
+    </form>
+    <div id="ownerClans" class="list"></div>
+  </section>
+
+  <section id="owner-ads-panel" class="owner-panel">
+    <h3>Рекламные заявки</h3>
+    <div class="filters admin-filters"><select id="ownerAdStatus"><option value="">Все статусы</option><option value="awaiting_payment">Ожидают оплату</option><option value="pending_moderation">На модерации</option><option value="active">Активные</option><option value="draft">Черновики</option><option value="rejected">Отклонённые</option><option value="expired">Завершённые</option><option value="refunded">Возвращённые</option></select><button id="ownerAdsRefresh" type="button">Показать</button></div>
+    <div id="ownerAds" class="list"></div>
+
+    <h3>Платежи Telegram Stars</h3>
+    <div class="filters admin-filters"><select id="ownerPaymentStatus"><option value="">Все платежи</option><option value="paid">Оплаченные</option><option value="refunded">Возвращённые</option><option value="created">Созданные</option><option value="invoice_sent">Счёт отправлен</option><option value="failed">Ошибки</option><option value="cancelled">Отменённые</option></select><button id="ownerPaymentsRefresh" type="button">Показать</button></div>
+    <div id="ownerPayments" class="list"></div>
+
+    <h3>Тарифы рекламы</h3>
+    <form id="ownerTariffForm" class="panel">
+      <input type="hidden" name="id" value="">
+      <div class="form-grid">
+        <input name="name" minlength="2" maxlength="80" placeholder="Название тарифа" required>
+        <input name="price_stars" type="number" min="1" max="100000" placeholder="Цена Stars" required>
+        <input name="duration_days" type="number" min="1" max="365" placeholder="Дней показа" required>
+        <select name="placement"><option value="standard">Обычное размещение</option><option value="premium">Премиум</option><option value="top">ТОП</option></select>
+        <input name="priority" type="number" min="0" max="10000" value="0" placeholder="Приоритет">
+      </div>
+      <textarea name="description" maxlength="1000" placeholder="Описание тарифа"></textarea>
+      <label><input name="is_pinned" type="checkbox"> Закреплять выше остальных</label>
+      <label><input name="is_active" type="checkbox" checked> Тариф доступен пользователям</label>
+      <div class="actions"><button type="submit">Сохранить тариф</button><button id="ownerTariffReset" type="button">Новый тариф</button></div>
+    </form>
+    <div id="ownerTariffs" class="list"></div>
+  </section>
+
+  <section id="owner-reports-panel" class="owner-panel">
+    <div class="filters admin-filters"><select id="ownerReportStatus"><option value="open">Открытые</option><option value="">Все</option><option value="closed">Закрытые</option></select><button id="ownerReportsRefresh" type="button">Показать</button></div>
+    <div id="ownerReports" class="list"></div>
+  </section>
+
+  <section id="owner-broadcasts-panel" class="owner-panel">
+    <form id="broadcastForm" class="panel">
+      <h3>Новая внутренняя рассылка</h3>
+      <select name="target"><option value="all">Все незаблокированные</option><option value="users">Обычные игроки</option><option value="clan_owners">Владельцы кланов</option><option value="room_owners">Создатели комнат</option><option value="staff">Сотрудники</option><option value="active_7d">Активные за 7 дней</option><option value="active_30d">Активные за 30 дней</option></select>
+      <input name="title" minlength="3" maxlength="120" placeholder="Заголовок" required>
+      <textarea name="text" minlength="3" maxlength="3000" placeholder="Текст уведомления" required></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+    <h3>История рассылок</h3><div id="ownerBroadcasts" class="list"></div>
+  </section>
+
+  <section id="owner-system-panel" class="owner-panel">
+    <div class="panel">
+      <h3>Состояние приложения</h3>
+      <div id="ownerSystemStatus" class="stats-grid"></div>
+      <div class="actions">
+        <button id="ownerSystemRefresh" type="button">Обновить состояние</button>
+        <button id="ownerCreateBackup" type="button">Создать резервную копию</button>
+      </div>
+      <p class="muted">Имя резервного файла показывается без пути. Файлы сохраняются в защищённой папке data/backups.</p>
+    </div>
+  </section>
+
+  <section id="owner-audit-panel" class="owner-panel">
+    <form id="ownerAuditFilters" class="filters admin-filters">
+      <input id="ownerAuditAction" placeholder="Действие, например user.ban">
+      <select id="ownerAuditKind"><option value="">Все объекты</option><option value="user">Пользователь</option><option value="room">Комната</option><option value="clan">Клан</option><option value="ad">Реклама</option><option value="report">Жалоба</option><option value="broadcast">Рассылка</option></select>
+      <input id="ownerAuditActor" type="number" min="1" placeholder="ID сотрудника">
+      <button type="submit">Найти</button>
+    </form>
+    <div id="ownerAudit" class="list"></div>
+  </section>
+</section>
+<p id="status" class="status" aria-live="polite"></p>
+</main>
+<div id="clanModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="clanModalTitle">
+  <div class="modal-card">
+    <button id="closeClanModal" class="modal-close" type="button" aria-label="Закрыть">×</button>
+    <div id="clanModalContent"></div>
+  </div>
+</div>
+<div id="ownerModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="ownerModalTitle">
+  <div class="modal-card admin-modal-card">
+    <button id="closeOwnerModal" class="modal-close" type="button" aria-label="Закрыть">×</button>
+    <div id="ownerModalContent"></div>
+  </div>
+</div>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="/static/app.js?v=130"></script>
+</body>
+</html>
