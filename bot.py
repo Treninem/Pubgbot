@@ -18,11 +18,26 @@ logger = logging.getLogger(__name__)
 
 @dp.message(CommandStart())
 async def start(message: Message):
+    user_id = message.from_user.id if message.from_user else None
     url = settings.effective_public_base_url.rstrip("/") + "/"
+    logger.info("Обработка /start: user_id=%s chat_id=%s mini_app_url=%s", user_id, message.chat.id, url)
+
+    if not settings.effective_public_base_url:
+        logger.error("Невозможно ответить на /start: PUBLIC_BASE_URL/DOMAIN не задан")
+        await message.answer(
+            "Бот запущен, но адрес Mini App пока не настроен. Сообщите владельцу бота."
+        )
+        return
+
     keyboard = InlineKeyboardMarkup(inline_keyboard=[[
-        InlineKeyboardButton(text="Открыть Squad Finder", web_app=WebAppInfo(url=url))
+        InlineKeyboardButton(text="🎮 Открыть Squad Finder", web_app=WebAppInfo(url=url))
     ]])
-    await message.answer("Подбор тимейтов PUBG Mobile.", reply_markup=keyboard)
+    await message.answer(
+        "👋 Добро пожаловать в PUBG Mobile Squad Finder!\n\n"
+        "Найдите тимейтов, команду или клан для совместной игры.",
+        reply_markup=keyboard,
+    )
+    logger.info("Ответ на /start отправлен: user_id=%s chat_id=%s", user_id, message.chat.id)
 
 
 @dp.pre_checkout_query()

@@ -1,6 +1,6 @@
 {
   "project": "PUBG Mobile Squad Finder",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "algorithm": "SHA-256",
   "files_count": 96,
   "files": [
@@ -11,8 +11,8 @@
     },
     {
       "path": ".env.example",
-      "sha256": "82d8a600e53cf8b2bc571d70c61ba3aca895e24dabd7be0d948001b85b1d7154",
-      "bytes": 1174
+      "sha256": "bcd89db1b89cd443f56b46bb583be2ea2571db5954ed0dbd7295cc8d0fb07eb6",
+      "bytes": 4627
     },
     {
       "path": ".gitignore",
@@ -21,13 +21,13 @@
     },
     {
       "path": "BOTHOST_DEPLOY_RU.md",
-      "sha256": "0a3f9c0819e8d782d2ed8cb49a027de26b89b46aad16826f2534b870f65f8c2f",
-      "bytes": 5860
+      "sha256": "5cbfb4cd2d0a2b07e53466b25c08197b9a6a0a52766e21bf1952eb129019374b",
+      "bytes": 6760
     },
     {
       "path": "CHECK_REPORT.json",
-      "sha256": "06cea608fdad8f5db83a87cfae14a2b6e330481d5e084b951f644fa946358279",
-      "bytes": 2849
+      "sha256": "76d2dc8bf24042e2d9d1584c533a7ab62720c1c60d20382667c952abfb9f0da0",
+      "bytes": 1082
     },
     {
       "path": "Dockerfile",
@@ -36,13 +36,13 @@
     },
     {
       "path": "FUNCTIONAL_STATUS.json",
-      "sha256": "35d40f552c2e519ee97e2552b87660021db56f65846e6b3043b575b5a6c4288f",
-      "bytes": 1174
+      "sha256": "6057b025844d251042edcbdc9d85cdc930fc0948dd8d50f750cd4d17d6954e21",
+      "bytes": 1307
     },
     {
       "path": "README.md",
-      "sha256": "5359885370c53a5a8a35d9e0ffc868beb22ac4775354577192b33363792dc29d",
-      "bytes": 6518
+      "sha256": "af995758040a6374b4b7ccc9bc323c6ac5fb6943b2a9518ad8ebda65edf92611",
+      "bytes": 6246
     },
     {
       "path": "app/__init__.py",
@@ -61,7 +61,7 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "7631ec9e83dd20e13da621b77d7c5e256e4e349b5d5a99a0543d6c3ee5ed7786",
+      "sha256": "a788660a3c9ca40093d9d7450b5c1f5f2278f7633faf74b1ef089905a2e4b5dd",
       "bytes": 5950
     },
     {
@@ -446,13 +446,13 @@
     },
     {
       "path": "app/telegram_service.py",
-      "sha256": "dd33deac9a309257c317f6c77e4534f9bf16f17af22a08c96199c3269735a8b8",
-      "bytes": 4724
+      "sha256": "c72abd52299f6cea7af4a430bedb30d0520f3e80bf3acc8d196b2474528164e4",
+      "bytes": 8887
     },
     {
       "path": "bot.py",
-      "sha256": "40d30a5ca4870ca505bae765d5c0c80bed3e1b162074abf4cee2e3fd73396b83",
-      "bytes": 3087
+      "sha256": "4bae8a1612aff47b5353876b4582044f6f7a2ff1c75634d96fd7af749a504031",
+      "bytes": 3903
     },
     {
       "path": "main.py",

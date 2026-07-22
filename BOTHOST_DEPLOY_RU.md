@@ -1,4 +1,4 @@
-# Запуск PUBG Mobile Squad Finder v1.3.0 на Bothost
+# Запуск PUBG Mobile Squad Finder v1.3.1 на Bothost
 
 ## 1. Подготовка GitHub
 
@@ -82,7 +82,7 @@ https://ВАШ-ДОМЕН/health
 Ожидается:
 
 ```json
-{"status":"ok","version":"1.3.0","environment":"production"}
+{"status":"ok","version":"1.3.1","environment":"production"}
 ```
 
 Затем:
@@ -171,3 +171,16 @@ SQLite-копии сохраняются в:
 ```env
 DATABASE_URL=sqlite+aiosqlite:////app/data/squad_finder.db
 ```
+
+### `/start` отправляется, но бот не отвечает
+
+В v1.3.1 в логах после команды должны появиться строки:
+
+```text
+Получен Telegram update: update_id=... type=message user_id=...
+Обработка /start: user_id=... chat_id=... mini_app_url=https://.../
+Ответ на /start отправлен: user_id=... chat_id=...
+Telegram update обработан: update_id=... type=message handled=true
+```
+
+При запуске также сверяйте строку `Telegram-бот подключён: id=... username=@...` — username должен совпадать с ботом, которому вы отправляете `/start`. Если строк `Получен Telegram update` нет, смотрите `pending_updates` и `Telegram сообщает об ошибке webhook` в стартовых логах.
