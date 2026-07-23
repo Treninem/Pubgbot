@@ -1,10 +1,10 @@
 {
   "project": "PUBG Mobile Squad Finder",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "completed_stage": 7,
   "stages_total": 7,
   "stage_name": "Премиум оформление и финальный релиз",
-  "status": "hotfix package ready; live Telegram verification required after redeploy",
+  "status": "port 3000 and exact Bothost domain hotfix ready; live Telegram verification required after redeploy",
   "features": {
     "single_process_fastapi_bot": true,
     "telegram_webhook": true,
@@ -30,8 +30,13 @@
     "image_layout_shift_protection": true,
     "telegram_webhook_synchronous_dispatch": true,
     "telegram_bot_identity_deduplication": true,
-    "telegram_update_diagnostic_logging": true
+    "telegram_update_diagnostic_logging": true,
+    "default_port_3000": true,
+    "exact_bothost_domain_configured": true
   },
   "next_stage": null,
-  "next_stage_name": null
+  "next_stage_name": null,
+  "domain": "pubgsquadfinder.bothost.tech",
+  "public_base_url": "https://pubgsquadfinder.bothost.tech",
+  "webhook_url": "https://pubgsquadfinder.bothost.tech/telegram/webhook"
 }

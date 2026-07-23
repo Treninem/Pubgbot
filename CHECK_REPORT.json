@@ -1,9 +1,9 @@
 {
   "project": "PUBG Mobile Squad Finder",
-  "version": "1.3.1",
-  "release": "hotfix /start and Telegram webhook diagnostics",
+  "version": "1.3.2",
+  "release": "hotfix: Bothost/Uvicorn port 3000 and exact domain pubgsquadfinder.bothost.tech",
   "checked_at": "2026-07-23",
-  "result": "static and package checks passed; live Bot API check requires user BOT_TOKEN",
+  "result": "static/package checks and port/domain configuration checks passed; live Bot API check requires user BOT_TOKEN and Bothost redeploy",
   "checks": [
     "Python compileall for all project modules",
     "AST parsing for all Python files",
@@ -16,7 +16,14 @@
     "expanded Russian .env.example",
     "runtime graphics unchanged from v1.3.0",
     "no cache, test database, .env or token included",
-    "ZIP integrity and SHA-256 manifest"
+    "ZIP integrity and SHA-256 manifest",
+    "main.py default PORT is 3000",
+    "Dockerfile exposes port 3000",
+    ".env.example and Bothost guide use port 3000",
+    "no legacy port references in active release configuration",
+    "exact DOMAIN is pubgsquadfinder.bothost.tech",
+    "exact PUBLIC_BASE_URL is https://pubgsquadfinder.bothost.tech",
+    "webhook URL resolves from configuration to https://pubgsquadfinder.bothost.tech/telegram/webhook"
   ],
   "live_checks_required_after_redeploy": [
     "startup log shows the expected bot username",

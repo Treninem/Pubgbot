@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore", case_sensitive=False)
 
     app_name: str = "PUBG Mobile Squad Finder"
-    app_version: str = "1.3.1"
+    app_version: str = "1.3.2"
     environment: str = "development"
     debug: bool = False
     log_level: str = "INFO"

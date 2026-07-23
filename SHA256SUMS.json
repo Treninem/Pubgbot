@@ -1,6 +1,6 @@
 {
   "project": "PUBG Mobile Squad Finder",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "algorithm": "SHA-256",
   "files_count": 96,
   "files": [
@@ -11,8 +11,8 @@
     },
     {
       "path": ".env.example",
-      "sha256": "bcd89db1b89cd443f56b46bb583be2ea2571db5954ed0dbd7295cc8d0fb07eb6",
-      "bytes": 4627
+      "sha256": "62f82600982028f964b6ba714ab416b89da7f4c03be59e32f0c800b127dc8e1f",
+      "bytes": 4783
     },
     {
       "path": ".gitignore",
@@ -21,28 +21,28 @@
     },
     {
       "path": "BOTHOST_DEPLOY_RU.md",
-      "sha256": "5cbfb4cd2d0a2b07e53466b25c08197b9a6a0a52766e21bf1952eb129019374b",
-      "bytes": 6760
+      "sha256": "1d2cdbf6748a7eab6019f03d95749ad96f1e5e9577088b4615d3979be42f8fc0",
+      "bytes": 6916
     },
     {
       "path": "CHECK_REPORT.json",
-      "sha256": "76d2dc8bf24042e2d9d1584c533a7ab62720c1c60d20382667c952abfb9f0da0",
-      "bytes": 1082
+      "sha256": "a1af9d5cbeb8814a86b76ce432da0e94254263ac3dfbebd031bdb368f845ed61",
+      "bytes": 1583
     },
     {
       "path": "Dockerfile",
-      "sha256": "ad930071da18c8e4945378e44d8663d4033ab890dfa214c729c807e708b5f3fa",
+      "sha256": "15d4dce44f0433391223a3e10d899118020093946fb17d356aa82468670ba0b0",
       "bytes": 415
     },
     {
       "path": "FUNCTIONAL_STATUS.json",
-      "sha256": "6057b025844d251042edcbdc9d85cdc930fc0948dd8d50f750cd4d17d6954e21",
-      "bytes": 1307
+      "sha256": "311bc41791d539f91df0369fb06a90258dcc0f3011634d674bda2a1c56e7d3cd",
+      "bytes": 1589
     },
     {
       "path": "README.md",
-      "sha256": "af995758040a6374b4b7ccc9bc323c6ac5fb6943b2a9518ad8ebda65edf92611",
-      "bytes": 6246
+      "sha256": "91f4858fec9af28d30a1720e8710db6ade08e2aaf290216919436517e6bb4b6e",
+      "bytes": 6985
     },
     {
       "path": "app/__init__.py",
@@ -61,7 +61,7 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "a788660a3c9ca40093d9d7450b5c1f5f2278f7633faf74b1ef089905a2e4b5dd",
+      "sha256": "2bba0f5f75f788760c7110573923accd19aef85c3ab4d7fda3226c6da100b84a",
       "bytes": 5950
     },
     {
@@ -456,7 +456,7 @@
     },
     {
       "path": "main.py",
-      "sha256": "5a42e1bfab123e150c1c4212ba2137abf8017be916da73becf857f5af8915a6e",
+      "sha256": "b0b365691af5a1e325d48e8cf4b9ab7b66f25cdbe4416e060896c5f8c5dd1cdd",
       "bytes": 678
     },
     {

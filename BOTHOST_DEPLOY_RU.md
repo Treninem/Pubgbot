@@ -1,4 +1,4 @@
-# Запуск PUBG Mobile Squad Finder v1.3.1 на Bothost
+# Запуск PUBG Mobile Squad Finder v1.3.2 на Bothost
 
 ## 1. Подготовка GitHub
 
@@ -18,7 +18,7 @@
 1. Создайте Telegram-бота из GitHub-репозитория.
 2. Главный файл укажите `main.py`.
 3. Включите использование домена.
-4. В поле порта установите `8080`.
+4. В поле порта установите `3000`.
 5. После получения домена выполните повторный деплой.
 
 Приложение слушает `0.0.0.0` и читает реальный порт из переменной `PORT`.
@@ -37,7 +37,9 @@ BACKUP_ENABLED=true
 BACKUP_DIR=/app/data/backups
 BACKUP_INTERVAL_HOURS=24
 BACKUP_KEEP_COUNT=14
-PORT=8080
+PORT=3000
+DOMAIN=pubgsquadfinder.bothost.tech
+PUBLIC_BASE_URL=https://pubgsquadfinder.bothost.tech
 ```
 
 Bothost обычно передаёт автоматически:
@@ -46,10 +48,11 @@ Bothost обычно передаёт автоматически:
 - `DOMAIN`;
 - `PORT`.
 
-Если `DOMAIN` не появился, задайте:
+Для этого проекта используйте:
 
 ```env
-PUBLIC_BASE_URL=https://ваш-домен.bothost.tech
+DOMAIN=pubgsquadfinder.bothost.tech
+PUBLIC_BASE_URL=https://pubgsquadfinder.bothost.tech
 ```
 
 Секрет webhook:
@@ -76,19 +79,19 @@ python -c "import secrets; print(secrets.token_urlsafe(32))"
 Откройте:
 
 ```text
-https://ВАШ-ДОМЕН/health
+https://pubgsquadfinder.bothost.tech/health
 ```
 
 Ожидается:
 
 ```json
-{"status":"ok","version":"1.3.1","environment":"production"}
+{"status":"ok","version":"1.3.2","environment":"production"}
 ```
 
 Затем:
 
 ```text
-https://ВАШ-ДОМЕН/ready
+https://pubgsquadfinder.bothost.tech/ready
 ```
 
 Должны быть:
@@ -105,7 +108,7 @@ https://ВАШ-ДОМЕН/ready
 В BotFather укажите HTTPS-адрес Mini App:
 
 ```text
-https://ВАШ-ДОМЕН/
+https://pubgsquadfinder.bothost.tech/
 ```
 
 Кнопка `/start` использует тот же адрес. Открывайте приложение именно внутри Telegram — production API принимает только подписанные `initData`.
@@ -146,7 +149,7 @@ SQLite-копии сохраняются в:
 
 ### 502 или 504
 
-- порт Bothost не равен `8080`;
+- порт Bothost не равен `3000`;
 - приложение не читает `PORT`;
 - домен включён до повторного деплоя;
 - процесс упал из-за production-проверки переменных.
@@ -174,7 +177,7 @@ DATABASE_URL=sqlite+aiosqlite:////app/data/squad_finder.db
 
 ### `/start` отправляется, но бот не отвечает
 
-В v1.3.1 в логах после команды должны появиться строки:
+В v1.3.2 в логах после команды должны появиться строки:
 
 ```text
 Получен Telegram update: update_id=... type=message user_id=...

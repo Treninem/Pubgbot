@@ -1,4 +1,4 @@
-# PUBG Mobile Squad Finder v1.3.1
+# PUBG Mobile Squad Finder v1.3.2
 
 Telegram Mini App для поиска тимейтов, комнат и кланов PUBG Mobile с закрытой панелью владельца и рекламой за Telegram Stars.
 
@@ -13,6 +13,16 @@ Telegram Mini App для поиска тимейтов, комнат и клан
 5. Telegram Stars и реклама;
 6. production-подготовка для GitHub/Bothost;
 7. премиум-графика и адаптивный мобильный интерфейс.
+
+## Что изменено в v1.3.2
+
+- основной и резервный порт приложения изменён с прежнего значения на `3000`;
+- `main.py` без переменной `PORT` теперь запускает Uvicorn на `0.0.0.0:3000`;
+- `Dockerfile` публикует `EXPOSE 3000`;
+- `.env.example` и инструкция Bothost приведены к порту `3000`;
+- точный домен проекта зафиксирован как `pubgsquadfinder.bothost.tech`;
+- webhook формируется как `https://pubgsquadfinder.bothost.tech/telegram/webhook`;
+- логика webhook, `/start`, база, интерфейс и графика v1.3.1 не изменялись.
 
 ## Что исправлено в v1.3.1
 
@@ -56,7 +66,7 @@ BACKUP_DIR=./data/backups
 python main.py
 ```
 
-Открыть `http://127.0.0.1:8080`.
+Открыть `http://127.0.0.1:3000`.
 
 ## Production-проверка перед деплоем
 
