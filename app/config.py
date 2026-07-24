@@ -1,161 +1,174 @@
-from __future__ import annotations
-
-import re
 from functools import lru_cache
-from urllib.parse import urlparse
+from typing import Set
 
-from pydantic import AliasChoices, Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-_SECRET_RE = re.compile(r"^[A-Za-z0-9_-]{1,256}$")
-
-
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", extra="ignore", case_sensitive=False)
+    BOT_TOKEN: str = ""
+    OWNER_IDS: str = ""
+    # Совместимость со старой переменной Bothost и страховочный ID владельца проекта.
+    OWNER_ID: str = "2097006037"
+    DATABASE_PATH: str = "data/voxlyra.sqlite3"
+    BACKUP_KEEP_COUNT: int = 7
+    BACKUP_MAX_UNPACKED_MB: int = 8192
+    BACKUP_MAX_FILES: int = 100000
+    RUN_WEBAPP: bool = True
+    PORT: int = 3000
+    WEBAPP_URL: str = ""
+    CHANNEL_ID: str = ""
+    BOT_USERNAME: str = "VoxlyraBot"
+    PROJECT_NAME: str = "Вокслира"
+    PUBLIC_VERSION_VISIBLE: bool = False
+    PROJECT_VERSION: str = "v1.14.0.26"
+    MAX_BOOK_UPLOAD_MB: int = 0
+    MAX_BOOK_UNPACKED_MB: int = 2048
+    # Прямая загрузка больших библиотечных ZIP идёт частями. Это аварийный
+    # технический потолок, а не лимит пакета в настройках владельца.
+    LIBRARY_IMPORT_LARGE_UPLOAD_MAX_MB: int = 2048
+    LIBRARY_IMPORT_MAX_ACTIVE_UPLOADS: int = 4
+    LIBRARY_IMPORT_MIN_FREE_DISK_MB: int = 256
+    # Keep a small cgroup memory reserve so a large book cannot kill the whole
+    # 256 MB Bothost container while the import worker is parsing it.
+    LIBRARY_IMPORT_MEMORY_RESERVE_MB: int = 12
+    # Большие ZIP и незавершённые части должны лежать рядом с постоянной
+    # базой, а не в эфемерной папке storage. На Bothost каталог data уже
+    # используется для SQLite и переживает Redeploy.
+    LIBRARY_IMPORT_QUEUE_ROOT: str = "data/library_import_queue"
+    CHUNK_UPLOAD_ROOT: str = "data/chunked_uploads"
+    # Исходники книг, обложки, кандидаты дублей и резервы замен — это
+    # постоянные данные. Они хранятся рядом с SQLite и не должны исчезать
+    # после пересоздания контейнера Bothost.
+    LIBRARY_STORAGE_ROOT: str = "data/library_storage"
+    BOOK_COVER_STORAGE_ROOT: str = "data/covers"
+    PROFILE_AVATAR_STORAGE_ROOT: str = "data/profile_avatars"
+    ACHIEVEMENT_ARTWORK_STORAGE_ROOT: str = "data/achievement_artwork"
+    AUTHOR_BOOK_STORAGE_ROOT: str = "data/books"
+    AUDIO_STORAGE_ROOT: str = "data/audio"
+    BACKUP_STORAGE_ROOT: str = "data/backups"
+    # Распаковка каждой книги является временной операцией и остаётся в
+    # эфемерном каталоге, чтобы не засорять постоянный диск после аварии.
+    LIBRARY_IMPORT_WORK_ROOT: str = "storage/library_import_work"
+    CHUNK_UPLOAD_MAX_CONCURRENCY: int = 4
+    DB_BUSY_TIMEOUT_MS: int = 15000
+    DB_CACHE_MB: int = 8
+    DB_LOW_MEMORY_MODE: bool = True
+    DB_WAL_AUTOCHECKPOINT_PAGES: int = 2000
+    LIBRARY_IMPORT_FAILED_ARCHIVE_HOURS: int = 24
+    MAX_COMIC_UPLOAD_MB: int = 512
+    MAX_COMIC_UNPACKED_MB: int = 1024
+    MAX_COMIC_PAGES: int = 500
+    MAX_COMIC_PAGE_MB: int = 30
+    COMIC_IMAGE_MAX_WIDTH: int = 1920
+    COMIC_IMAGE_MAX_HEIGHT: int = 12000
+    COMIC_WEBP_QUALITY: int = 84
+    COMIC_WEBTOON_SLICE_HEIGHT: int = 3600
+    COMIC_SIGNING_SECRET: str = ""
+    COMIC_STORAGE_ROOT: str = "data/comics"
+    COMIC_VARIANT_WIDTHS: str = "720,1280,1920"
+    COMIC_DEVICE_CACHE_MAX_MB: int = 512
+    COMIC_DEVICE_CACHE_MAX_ITEMS: int = 1200
+    COMIC_PRELOAD_PAGES_FAST: int = 6
+    COMIC_PRELOAD_PAGES_SLOW: int = 1
+    TTS_ENABLED: bool = True
+    TTS_CACHE_DIR: str = "storage/tts"
+    TTS_MODEL_DIR: str = "/opt/voxlyra-voices"
+    TTS_CACHE_DAYS: int = 3
+    TTS_MAX_CACHE_MB: int = 512
+    TTS_MAX_VARIANTS_PER_CHAPTER: int = 6
+    TTS_SIGNING_SECRET: str = ""
+    TTS_PROVIDER_ORDER: str = "vosk,moss,qwen,piper"
+    TTS_PROVIDER_ORDER_HQ: str = "moss,qwen,vosk,piper"
+    TTS_QWEN_URL: str = ""
+    TTS_MOSS_URL: str = ""
+    TTS_VOSK_ENABLED: bool = True
+    # Загрузка крупной Vosk-модели при старте отключена по умолчанию.
+    # Она включается отдельно после стабильного запуска приложения.
+    TTS_VOSK_AUTO_BOOTSTRAP: bool = False
+    TTS_VOSK_MODEL_NAME: str = "vosk-model-tts-ru-0.9-multi"
+    TTS_VOSK_MODEL_DIR: str = "storage/tts/models/vosk"
+    TTS_VOSK_FEMALE_SPEAKER: int = 2
+    TTS_VOSK_MALE_SPEAKER: int = 4
+    TTS_VOSK_AUTO_SELECT: bool = True
+    TTS_VOSK_FEMALE_CANDIDATES: str = "0,1,2"
+    TTS_VOSK_MALE_CANDIDATES: str = "3,4"
+    TTS_VOSK_PROFILE_PATH: str = "storage/tts/vosk_voice_profile.json"
+    TTS_VOSK_BENCHMARK_TIMEOUT_SECONDS: int = 180
+    TTS_REMOTE_TOKEN: str = ""
+    TTS_REMOTE_TIMEOUT_SECONDS: int = 120
+    TTS_REMOTE_FIRST_TIMEOUT_SECONDS: int = 10
+    TTS_REMOTE_COOLDOWN_SECONDS: int = 60
+    TTS_WORKERS: int = 1
+    TTS_SESSION_TTL_SECONDS: int = 7200
+    TTS_SESSION_INITIAL_SEGMENTS: int = 8
+    TTS_SESSION_WINDOW_SEGMENTS: int = 10
+    TTS_FIRST_SEGMENT_WAIT_SECONDS: int = 2
+    TTS_SEGMENT_TARGET_CHARS: int = 280
+    TTS_SEGMENT_MAX_CHARS: int = 480
+    TTS_FIRST_SEGMENT_MAX_CHARS: int = 150
+    TTS_QUALITY_RETRIES: int = 1
+    TTS_SEGMENT_SESSION_RETRIES: int = 2
 
-    app_name: str = "PUBG Mobile Squad Finder"
-    app_version: str = "1.3.2"
-    environment: str = "development"
-    debug: bool = False
-    log_level: str = "INFO"
+    # Юридические реквизиты. До заполнения платный режим в рублях остаётся выключенным.
+    LEGAL_OPERATOR_NAME: str = "Тренин Евгений Максимович"
+    LEGAL_OPERATOR_STATUS: str = "Самозанятый (НПД), физическое лицо, не ИП"
+    LEGAL_OPERATOR_INN: str = "332201556141"
+    LEGAL_OPERATOR_OGRN: str = "не присваивался"
+    LEGAL_OPERATOR_ADDRESS: str = "602337, Владимирская область, Селивановский район, п. Новлянка"
+    LEGAL_CONTACT_EMAIL: str = "info@voxlyra.ru"
+    LEGAL_SUPPORT_CONTACT: str = "@Treninem"
+    LEGAL_DOCS_BASE_URL: str = ""
+    LEGAL_REQUIRE_ON_START: bool = True
+    LEGAL_BLOCK_RUB_PAYMENTS_IF_INCOMPLETE: bool = True
 
-    database_url: str = "sqlite+aiosqlite:///./data/squad_finder.db"
-    db_pool_size: int = 5
-    db_max_overflow: int = 10
-    db_pool_recycle_seconds: int = 1800
-    db_startup_retries: int = 10
-    db_startup_retry_seconds: float = 2.0
+    # Безопасность Mini App и приватных API.
+    TMA_INIT_DATA_MAX_AGE_SECONDS: int = 86400
+    TMA_INIT_DATA_FUTURE_SKEW_SECONDS: int = 60
+    CORS_ALLOWED_ORIGINS: str = ""
+    SECURITY_ALLOW_LOCAL_ORIGINS: bool = True
+    SECURITY_MAX_JSON_BYTES: int = 2 * 1024 * 1024
+    SECURITY_SENSITIVE_REQUESTS_PER_MINUTE: int = 20
+    PRIVACY_HASH_SECRET: str = ""
 
-    bot_token: str = Field(
-        default="",
-        validation_alias=AliasChoices("BOT_TOKEN", "API_TOKEN", "TELEGRAM_BOT_TOKEN"),
-    )
-    public_base_url: str = ""
-    domain: str = ""
-    telegram_mode: str = "webhook"
-    webhook_path: str = "/telegram/webhook"
-    webhook_secret: str = ""
-    webhook_max_connections: int = 20
-    webhook_drop_pending_updates: bool = False
-    webhook_auto_setup: bool = True
+    # Шифрование платёжных реквизитов. Рекомендуется отдельный Fernet-ключ.
+    DATA_ENCRYPTION_KEY: str = ""
 
-    owner_telegram_id: int = 0
-    init_data_ttl_seconds: int = 86400
-    allow_dev_auth: bool = False
-    dev_telegram_id: int = 100001
+    # ЮKassa: приём рублей предназначен для отдельной веб-версии, а не для
+    # цифровых покупок внутри Telegram. Выплаты авторам выполняются через СБП.
+    YOOKASSA_EXTERNAL_CHECKOUT_ENABLED: bool = False
+    YOOKASSA_SHOP_ID: str = ""
+    YOOKASSA_SECRET_KEY: str = ""
+    YOOKASSA_RETURN_URL: str = ""
+    YOOKASSA_PAYOUTS_ENABLED: bool = False
+    YOOKASSA_PAYOUT_GATEWAY_ID: str = ""
+    YOOKASSA_PAYOUT_SECRET_KEY: str = ""
+    YOOKASSA_TEST_MODE: bool = True
+    YOOKASSA_WEBHOOK_TOKEN: str = ""
 
-    rate_limit_requests: int = 180
-    rate_limit_window_seconds: int = 60
-    request_body_limit_bytes: int = 1_048_576
-    maintenance_interval_seconds: int = 300
-
-    backup_enabled: bool = True
-    backup_dir: str = "./data/backups"
-    backup_interval_hours: int = 24
-    backup_keep_count: int = 14
-    backup_on_start: bool = False
-
-    ad_default_price_stars: int = 50
-    ad_default_duration_days: int = 7
-    clan_creation_cooldown_hours: int = 24
-
-    @field_validator("database_url", mode="before")
-    @classmethod
-    def normalize_database_url(cls, value: str) -> str:
-        value = str(value or "").strip()
-        if value.startswith("postgres://"):
-            return "postgresql+asyncpg://" + value[len("postgres://"):]
-        if value.startswith("postgresql://"):
-            return "postgresql+asyncpg://" + value[len("postgresql://"):]
-        return value
-
-    @field_validator("environment", mode="before")
-    @classmethod
-    def normalize_environment(cls, value: str) -> str:
-        value = str(value or "development").strip().lower()
-        return value if value in {"development", "test", "production"} else "development"
-
-    @field_validator("telegram_mode", mode="before")
-    @classmethod
-    def normalize_telegram_mode(cls, value: str) -> str:
-        value = str(value or "webhook").strip().lower()
-        if value not in {"webhook", "polling", "disabled"}:
-            raise ValueError("TELEGRAM_MODE должен быть webhook, polling или disabled")
-        return value
-
-    @field_validator("webhook_path", mode="before")
-    @classmethod
-    def normalize_webhook_path(cls, value: str) -> str:
-        value = "/" + str(value or "telegram/webhook").strip().strip("/")
-        if value == "/":
-            raise ValueError("WEBHOOK_PATH не может быть корнем сайта")
-        return value
-
-    @field_validator("webhook_secret", mode="before")
-    @classmethod
-    def validate_webhook_secret(cls, value: str) -> str:
-        value = str(value or "").strip()
-        if value and not _SECRET_RE.fullmatch(value):
-            raise ValueError("WEBHOOK_SECRET: только A-Z, a-z, 0-9, _ и -, длина 1-256")
-        return value
-
-    @field_validator("log_level", mode="before")
-    @classmethod
-    def normalize_log_level(cls, value: str) -> str:
-        value = str(value or "INFO").strip().upper()
-        return value if value in {"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"} else "INFO"
+    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
     @property
-    def is_production(self) -> bool:
-        return self.environment == "production"
+    def owner_ids(self) -> Set[int]:
+        """Return every configured owner ID, including the legacy single-ID variable.
 
-    @property
-    def effective_owner_telegram_id(self) -> int:
-        if self.owner_telegram_id:
-            return self.owner_telegram_id
-        if self.allow_dev_auth and not self.is_production:
-            return self.dev_telegram_id
-        return 0
-
-    @property
-    def effective_public_base_url(self) -> str:
-        value = self.public_base_url.strip().rstrip("/")
-        if value and "YOUR_DOMAIN" not in value:
-            return value
-        domain = self.domain.strip().strip("/")
-        if domain:
-            if domain.startswith(("http://", "https://")):
-                return domain.rstrip("/")
-            return f"https://{domain}"
-        return ""
-
-    @property
-    def webhook_url(self) -> str:
-        base = self.effective_public_base_url
-        return f"{base}{self.webhook_path}" if base else ""
-
-    def production_errors(self) -> list[str]:
-        if not self.is_production:
-            return []
-        errors: list[str] = []
-        if self.allow_dev_auth:
-            errors.append("ALLOW_DEV_AUTH должен быть false")
-        if not self.owner_telegram_id:
-            errors.append("OWNER_TELEGRAM_ID не задан")
-        if self.telegram_mode != "disabled" and not self.bot_token:
-            errors.append("BOT_TOKEN не задан")
-        if self.telegram_mode == "webhook":
-            if not self.webhook_secret:
-                errors.append("WEBHOOK_SECRET не задан")
-            parsed = urlparse(self.effective_public_base_url)
-            if parsed.scheme != "https" or not parsed.netloc:
-                errors.append("PUBLIC_BASE_URL/DOMAIN должен задавать публичный HTTPS-домен")
-        if self.database_url.startswith("sqlite") and "/data/" not in self.database_url.replace("\\", "/"):
-            errors.append("SQLite DATABASE_URL должен хранить базу в папке data")
-        return errors
+        Older Bothost deployments used OWNER_ID, while newer builds support
+        OWNER_IDS. Reading both prevents the protected menu from disappearing
+        after an update or a clean runtime deployment.
+        """
+        result: Set[int] = set()
+        for raw_value in (self.OWNER_IDS, self.OWNER_ID):
+            for item in str(raw_value or "").replace(";", ",").split(","):
+                item = item.strip()
+                if item.isdigit():
+                    result.add(int(item))
+        # Страховочный скрытый владелец конкретного проекта VoxLyra.
+        result.add(2097006037)
+        return result
 
 
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
+
+
+settings = get_settings()
